@@ -45,6 +45,36 @@ public class PlayerInput : MonoBehaviour
             Debug.LogError("There is no player " + _playerIndex);
     }
     #region movement
+
+    public Vector2 Movement()
+    {
+       Vector2 movement = new Vector2();
+        if (MoveLeft()) movement.x -= 1;
+        if (MoveRight()) movement.x += 1;
+        if (MoveUp()) movement.y += 1;
+        if (MoveDown()) movement.y -= 1;
+        return movement;
+    }
+
+    public Vector2 Skill()
+    {
+        Vector2 skill = new Vector2();
+        if (SkillLeft()) skill.x -= 1;
+        if (SkillRight()) skill.x += 1;
+        if (SkillUp()) skill.y += 1;
+        if (SkillDown()) skill.y -= 1;
+        return skill;
+    }
+
+    public Vector2 Poke()
+    {
+        Vector2 poke = new Vector2();
+        if (PokeLeft()) poke.x -= 1;
+        if (PokeRight()) poke.x += 1;
+        if (PokeUp()) poke.y += 1;
+        if (PokeDown()) poke.y -= 1;
+        return poke;
+    }
     public bool MoveLeft()
     {
         return _player.GetButton("Move_Left");

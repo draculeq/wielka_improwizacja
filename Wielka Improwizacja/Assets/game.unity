@@ -132,7 +132,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 13651100, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 3353366, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 2368580, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &107611399 stripped
@@ -150,6 +153,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ac393ca06ad69408c33fba04bca326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &107611402
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107611399}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b84fe3d7a3a51d34c8d2d3a06b2e62c9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!212 &107611404
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107611399}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 53cc14751e62e3343a63ef0c942206a3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &559653828
 Prefab:
   m_ObjectHideFlags: 0
@@ -266,7 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 7.5
-  force: {x: 0, y: .300000012, z: 1}
+  force: {x: 0, y: .400000006, z: 1}
   strength: 38
   deltaStrength: 4
   mode: 1
@@ -329,6 +375,10 @@ Prefab:
       propertyPath: _userData.players.Array.data[1]._defaultKeyboardMaps.Array.data[0]._enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11462290, guid: 530d50aa26d76ad4ca4f2cca1d73d11d, type: 2}
+      propertyPath: _userData.keyboardMaps.Array.data[0].actionElementMaps.Array.data[6]._actionId
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 530d50aa26d76ad4ca4f2cca1d73d11d, type: 2}
   m_IsPrefabParent: 0
@@ -387,7 +437,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 13651100, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 3353366, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 2368580, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &995317290 stripped
@@ -405,6 +458,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ac393ca06ad69408c33fba04bca326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &995317292
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 995317290}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 53cc14751e62e3343a63ef0c942206a3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!95 &995317293
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 995317290}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b84fe3d7a3a51d34c8d2d3a06b2e62c9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1182176617 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 125486, guid: 45fad11a09928c0489523035df4774c3, type: 2}
@@ -421,10 +517,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counter: {fileID: 995317291}
+--- !u!65 &1182176620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182176617}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.71000004, y: 4.13999987, z: 1}
+  m_Center: {x: 0, y: 1.37, z: 0}
 --- !u!1 &1557330460 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 125486, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_PrefabInternal: {fileID: 107611398}
+--- !u!65 &1557330461
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1557330460}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.71000004, y: 4.13999987, z: 1}
+  m_Center: {x: 0, y: 1.37, z: 0}
 --- !u!114 &1557330465
 MonoBehaviour:
   m_ObjectHideFlags: 0

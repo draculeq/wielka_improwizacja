@@ -184,6 +184,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11462290, guid: 530d50aa26d76ad4ca4f2cca1d73d11d, type: 2}
+      propertyPath: _userData.players.Array.data[1]._defaultKeyboardMaps.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 461898, guid: 530d50aa26d76ad4ca4f2cca1d73d11d, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -215,6 +219,10 @@ Prefab:
     - target: {fileID: 461898, guid: 530d50aa26d76ad4ca4f2cca1d73d11d, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11462290, guid: 530d50aa26d76ad4ca4f2cca1d73d11d, type: 2}
+      propertyPath: _userData.players.Array.data[1]._defaultKeyboardMaps.Array.data[0]._enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 530d50aa26d76ad4ca4f2cca1d73d11d, type: 2}

@@ -24,9 +24,6 @@ public class Spawner : MonoBehaviour
 		_tmp = basePos;
 		_tmp2 = Vector3.zero;
 	}
-
-	//for test purpose
-	public Transform player1;
 	
 	public void ThrowPomidorAt ( Vector3 player_pos, int nb ) {
 		while ( nb > 0 ) {

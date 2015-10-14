@@ -10,6 +10,7 @@ public class OnCollisionCallBack : MonoBehaviour {
 		if ( poolableOb != null ) {
 			if ( poolableOb.directContactOnly & poolableOb.isOnGround ) return;
 			if ( counter != null ) counter.AddPoint(poolableOb.point);
+			AudioController.Instance.PomidorCrashed();
 			poolableOb.Deactivate();
 		}
 	}

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(Collider))]
-public class PoolableObject : MonoBehaviour
+public abstract class IPoolableObject : MonoBehaviour
 {
 	public int point = 1;
 	public float lyingTime = 3f;
@@ -13,6 +13,8 @@ public class PoolableObject : MonoBehaviour
 
 	public bool IsFree () {
 		return deactivated;
+	}
+	virtual public void PlayOnTriggerSound () {
 	}
 
 	public void Deactivate() {

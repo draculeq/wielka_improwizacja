@@ -92,6 +92,7 @@
      <Compile Include="Assets\Rewired\Internal\Scripts\InputManager.cs" />
      <Compile Include="Assets\Rewired\Internal\Scripts\Misc\ExternalTools.cs" />
      <Compile Include="Assets\Rewired\Internal\Scripts\Platforms\Ouya\OuyaInputSource.cs" />
+     <Compile Include="Assets\Scripts\AudioSpecTest.cs" />
      <Compile Include="Assets\Scripts\MoveGen.cs" />
      <Compile Include="Assets\Scripts\OnCollisionCallBack.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
@@ -112,7 +113,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="Rewired_Core">
- <HintPath>D:/Projects/Git-Repo/wielka_improwizacja/Wielka Improwizacja/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Core.dll</HintPath>
+ <HintPath>D:/Projects/Git-Repo/wielka_improwizacja2/Wielka Improwizacja/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Core.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

@@ -85,12 +85,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &95950463 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11418292, guid: 45fad11a09928c0489523035df4774c3,
-    type: 2}
-  m_PrefabInternal: {fileID: 995317289}
-  m_Script: {fileID: 11500000, guid: a8ac393ca06ad69408c33fba04bca326, type: 3}
 --- !u!1001 &107611398
 Prefab:
   m_ObjectHideFlags: 0
@@ -175,6 +169,7 @@ Prefab:
     - {fileID: 6505472, guid: 45fad11a09928c0489523035df4774c3, type: 2}
     - {fileID: 11487282, guid: 45fad11a09928c0489523035df4774c3, type: 2}
     - {fileID: 6563872, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11418292, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &107611405 stripped
@@ -347,7 +342,7 @@ MonoBehaviour:
   mode: 1
   player1: {fileID: 107611405}
   throwFlowerRandomRangeOffset: .75
-  throwPomidorRandomRangeOffset: 1.87
+  throwPomidorRandomRangeOffset: 1
 --- !u!4 &702052214
 Transform:
   m_ObjectHideFlags: 0
@@ -574,6 +569,7 @@ Prefab:
     - {fileID: 6563872, guid: 45fad11a09928c0489523035df4774c3, type: 2}
     - {fileID: 11487282, guid: 45fad11a09928c0489523035df4774c3, type: 2}
     - {fileID: 11427742, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11418292, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &995317300 stripped
@@ -582,18 +578,27 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 995317289}
   m_Script: {fileID: 11500000, guid: f4f8dc2fcee08fc4cbb35189420c551e, type: 3}
+--- !u!1 &1423154189 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 132316, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+  m_PrefabInternal: {fileID: 995317289}
+--- !u!114 &1423154196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1423154189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ac393ca06ad69408c33fba04bca326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1472330899 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11439376, guid: 45fad11a09928c0489523035df4774c3,
     type: 2}
   m_PrefabInternal: {fileID: 107611398}
   m_Script: {fileID: 11500000, guid: f4f8dc2fcee08fc4cbb35189420c551e, type: 3}
---- !u!114 &1472330900 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11418292, guid: 45fad11a09928c0489523035df4774c3,
-    type: 2}
-  m_PrefabInternal: {fileID: 107611398}
-  m_Script: {fileID: 11500000, guid: a8ac393ca06ad69408c33fba04bca326, type: 3}
 --- !u!81 &1625493640 stripped
 AudioListener:
   m_PrefabParentObject: {fileID: 8133368, guid: e3503f069a2a0f84db3295820254130b,
@@ -641,6 +646,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 653798206}
   m_RootOrder: 0
+--- !u!1 &1850055638 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 132316, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+  m_PrefabInternal: {fileID: 107611398}
+--- !u!114 &1850055639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1850055638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ac393ca06ad69408c33fba04bca326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1938964648
 Prefab:
   m_ObjectHideFlags: 0
@@ -723,11 +743,11 @@ Prefab:
     - target: {fileID: 11407786, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: _counter
       value: 
-      objectReference: {fileID: 95950463}
+      objectReference: {fileID: 1423154196}
     - target: {fileID: 11497750, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: _counter
       value: 
-      objectReference: {fileID: 1472330900}
+      objectReference: {fileID: 1850055639}
     - target: {fileID: 11465580, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: _generator
       value: 

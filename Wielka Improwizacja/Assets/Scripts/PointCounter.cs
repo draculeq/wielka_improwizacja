@@ -10,7 +10,12 @@ public class PointCounter : MonoBehaviour
 	}
 	public void AddPoint (int points ) {
 		p += points;
+		Debug.Log("player get points = " + points + " PointAdded == null? " + (PointAdded == null) );
 	    if (PointAdded != null) PointAdded(p);
+	}
+
+	public bool NullCheck () {
+		return PointAdded == null;
 	}
 }
 

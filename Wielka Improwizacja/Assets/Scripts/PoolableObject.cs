@@ -33,13 +33,17 @@ public class PoolableObject : MonoBehaviour
 
 	IEnumerator _t;
 	void OnCollisionEnter(Collision other ) {
+		if ( !deactivated ) {
+			if ( other.gameObject.name.Equals("Floor") ) {
+				isOnGround = true;
+			}
+		}
 		if ( !deactivated & _t == null ) {
 			StartCoroutine (_t = WaitOnFloor () );
 		}
 	}
 
 	IEnumerator WaitOnFloor () {
-		isOnGround = true;
 		yield return new WaitForSeconds(lyingTime);
 		if ( !deactivated ) Deactivate();
 	}

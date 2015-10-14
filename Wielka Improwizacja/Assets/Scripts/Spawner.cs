@@ -41,7 +41,7 @@ public class Spawner : MonoBehaviour
 		var k = pomidorPool.Get();
 		_tmp.Set (player_pos.x, _tmp.y, _tmp.z);
 		k.transform.position = _tmp;
-		k.GetComponent<Rigidbody>().AddForce(force* (strength + ((Random.value - 0.5f) * deltaStrength*2 )) ,mode);
+		k.GetComponent<Rigidbody>().AddForce(force* (strength + Random.value  * deltaStrength) ,mode);
 	}
 
 	[Range(0,1f)]
@@ -54,5 +54,17 @@ public class Spawner : MonoBehaviour
 		_tmp2.Set ( force.x + Random.Range(0,throwFlowerRandomRangeOffset)-throwFlowerRandomRangeOffset/2, force.y, force.z);
 		k.GetComponent<Rigidbody>().AddForce(_tmp2* (strength + ((Random.value - 0.5f) * deltaStrength*2 )) ,mode);
 	}
+
+	#region hide
+	private static Spawner _instance;
+	public static Spawner Instance {
+		get {
+			if ( _instance == null ) {
+				_instance = GameObject.FindObjectOfType(typeof(Spawner)) as Spawner;
+			}
+			return _instance;
+		}
+	}
+	#endregion
 }
 

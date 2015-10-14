@@ -33,7 +33,13 @@ public class AudienceSatisfaction : MonoBehaviour
         if (winTimer >= 10)
         {
             enabled = false;
-            Debug.Log("Wictory");
+			var l = GameObject.FindObjectsOfType(typeof(PointCounter)) as PointCounter[];
+			if ( l.Length != 2 ) throw new UnityException("more/less than 2 players in scene ?? list.Length=" + l.Length);
+			int winner = 0;
+			if ( l[0].totalPoints == l[1].totalPoints ) winner = 3;
+			else winner = l[0].totalPoints > l[1].totalPoints ? 1 : 2;
+			PlayerPrefs.SetInt("winner",winner);
+			Application.LoadLevel("game_end");
         }
     }
 

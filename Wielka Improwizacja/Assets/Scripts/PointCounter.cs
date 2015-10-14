@@ -4,7 +4,7 @@ using UnityEngine;
 public class PointCounter : MonoBehaviour
 {
 	public bool usingLeftPanel;
-	int totalPoints;
+	public int totalPoints { get; private set; }
 
 	void Awake () {
 		totalPoints=0;

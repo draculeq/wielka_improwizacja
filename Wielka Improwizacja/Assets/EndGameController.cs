@@ -24,6 +24,9 @@ public class EndGameController : MonoBehaviour {
 			p2.Play("win");
 			p1.enabled = false;
 			p1.GetComponent<SpriteRenderer>().sprite = gor_lose;
+		}else if ( winner == 3 ) {
+			p1.Play("win");
+			p2.Play("win");
 		} else {
 			// default
 			p1.Play("win");

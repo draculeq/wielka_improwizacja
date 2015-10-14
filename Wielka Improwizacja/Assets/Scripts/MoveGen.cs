@@ -78,7 +78,7 @@ public class MoveGen : MonoBehaviour
         {
             if (_used || _skipped) return false;
             if (Time.time > _time - _timeTolerance && Time.time < _time + _timeTolerance)
-            {
+			{
                 return true;
             }
             if (Time.time > _time + _timeTolerance)
@@ -97,6 +97,8 @@ public class MoveGen : MonoBehaviour
             if (_direction == direction)
             {
                 _used = true;
+				
+				Spawner.Instance.ThrowKwiatekAround(_player.position,3);
                 if (Used != null) Used(true);
             }
             return _direction == direction;

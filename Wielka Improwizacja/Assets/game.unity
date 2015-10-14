@@ -196,6 +196,10 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 53cc14751e62e3343a63ef0c942206a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &107611405 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400458, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+  m_PrefabInternal: {fileID: 107611398}
 --- !u!114 &107611406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +278,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3503f069a2a0f84db3295820254130b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &570937570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 570937571}
+  - 114: {fileID: 570937572}
+  m_Layer: 0
+  m_Name: Kwiatki
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &570937571
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 570937570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 653798206}
+  m_RootOrder: 1
+--- !u!114 &570937572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 570937570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad364eecebed8f4da580e51dd3bf08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 11405798, guid: 46f9cc507efc35b4e8dd1a9387fe0dfc, type: 2}
+  initCap: 5
+  name: kwiatek
 --- !u!1 &653798205
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +347,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1842385253}
+  - {fileID: 570937571}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!114 &653798207
@@ -316,6 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - {fileID: 1842385252}
+  - {fileID: 570937572}
 --- !u!1 &702052212
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +396,8 @@ MonoBehaviour:
   strength: 38
   deltaStrength: 4
   mode: 1
+  player1: {fileID: 107611405}
+  throwFlowerRandomRangeOffset: .75
 --- !u!4 &702052214
 Transform:
   m_ObjectHideFlags: 0
@@ -714,7 +764,7 @@ GameObject:
   - 4: {fileID: 1842385253}
   - 114: {fileID: 1842385252}
   m_Layer: 0
-  m_Name: Pomidors
+  m_Name: Pomidory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

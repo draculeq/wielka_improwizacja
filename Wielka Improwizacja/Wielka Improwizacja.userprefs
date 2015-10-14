@@ -1,12 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AudioSpecTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PoolManager.cs">
     <Files>
       <File FileName="Assets\Scripts\Pool.cs" Line="32" Column="22" />
-      <File FileName="Assets\Scripts\PoolManager.cs" Line="42" Column="1" />
-      <File FileName="Assets\Scripts\PoolableObject.cs" Line="28" Column="17" />
+      <File FileName="Assets\Scripts\PoolManager.cs" Line="23" Column="1" />
+      <File FileName="Assets\Scripts\PoolableObject.cs" Line="27" Column="30" />
       <File FileName="Assets\Scripts\PointCounter.cs" Line="5" Column="2" />
       <File FileName="Assets\Scripts\AudioSpecTest.cs" Line="29" Column="16" />
+      <File FileName="Assets\Scripts\Spawner.cs" Line="57" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

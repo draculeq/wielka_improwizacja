@@ -41,7 +41,7 @@ public class Spawner : MonoBehaviour
 		var k = pomidorPool.Get();
 		_tmp.Set (player_pos.x, _tmp.y, _tmp.z);
 		k.transform.position = _tmp;
-		k.GetComponent<Rigidbody>().AddForce(force* (strength + Random.value  * deltaStrength) ,mode);
+		k.GetComponent<Rigidbody>().AddForce(force* (strength + Random.value  * deltaStrength)*1.1f ,mode);
 	}
 
 	[Range(0,1f)]

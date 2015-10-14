@@ -82,8 +82,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5cb1bfea026c1e499be4bb50a1a5efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: 1
-  lyingTime: 20
+  point: -3
+  lyingTime: 2.5
+  directContactOnly: 1
 --- !u!212 &21277620
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -131,7 +132,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: lyingTime
-      value: 20
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
@@ -142,6 +143,14 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 79f557eece42ba444b48c8b339702c47,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: directContactOnly
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: point
+      value: -3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 173388}

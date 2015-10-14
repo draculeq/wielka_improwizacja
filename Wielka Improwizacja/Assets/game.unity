@@ -92,10 +92,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11414398, guid: 45fad11a09928c0489523035df4774c3, type: 2}
-      propertyPath: moves.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 400458, guid: 45fad11a09928c0489523035df4774c3, type: 2}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -126,13 +122,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400458, guid: 45fad11a09928c0489523035df4774c3, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 132316, guid: 45fad11a09928c0489523035df4774c3, type: 2}
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
-    - target: {fileID: 11485234, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - target: {fileID: 11469356, guid: 45fad11a09928c0489523035df4774c3, type: 2}
       propertyPath: listener
       value: 
       objectReference: {fileID: 1625493640}
@@ -140,20 +136,20 @@ Prefab:
       propertyPath: _playerIndex
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11437534, guid: 45fad11a09928c0489523035df4774c3, type: 2}
-      propertyPath: listener
-      value: 
-      objectReference: {fileID: 1625493640}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &107611400 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11418292, guid: 45fad11a09928c0489523035df4774c3,
+  m_PrefabParentObject: {fileID: 11432394, guid: 45fad11a09928c0489523035df4774c3,
     type: 2}
   m_PrefabInternal: {fileID: 107611398}
   m_Script: {fileID: 11500000, guid: a8ac393ca06ad69408c33fba04bca326, type: 3}
---- !u!114 &107611406 stripped
+--- !u!4 &107611405 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400458, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+  m_PrefabInternal: {fileID: 107611398}
+--- !u!114 &107611410 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11414398, guid: 45fad11a09928c0489523035df4774c3,
     type: 2}
@@ -205,6 +201,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3503f069a2a0f84db3295820254130b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &570937570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 570937571}
+  - 114: {fileID: 570937572}
+  m_Layer: 0
+  m_Name: Kwiatki
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &570937571
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 570937570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 653798206}
+  m_RootOrder: 1
+--- !u!114 &570937572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 570937570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad364eecebed8f4da580e51dd3bf08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 11405798, guid: 46f9cc507efc35b4e8dd1a9387fe0dfc, type: 2}
+  initCap: 5
+  name: kwiatek
 --- !u!1 &653798205
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +270,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1842385253}
+  - {fileID: 570937571}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!114 &653798207
@@ -247,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - {fileID: 1842385252}
+  - {fileID: 570937572}
 --- !u!1 &702052212
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,8 +319,8 @@ MonoBehaviour:
   strength: 38
   deltaStrength: 4
   mode: 1
-  player1: {fileID: 0}
-  throwFlowerRandomRangeOffset: 0
+  player1: {fileID: 107611405}
+  throwFlowerRandomRangeOffset: .75
 --- !u!4 &702052214
 Transform:
   m_ObjectHideFlags: 0
@@ -458,74 +498,35 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400458, guid: 45fad11a09928c0489523035df4774c3, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 132316, guid: 45fad11a09928c0489523035df4774c3, type: 2}
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
-    - target: {fileID: 11437534, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - target: {fileID: 11489082, guid: 45fad11a09928c0489523035df4774c3, type: 2}
       propertyPath: listener
       value: 
       objectReference: {fileID: 1625493640}
-    - target: {fileID: 132316, guid: 45fad11a09928c0489523035df4774c3, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 9580050, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: deb21265e16240b40979d75a404a24fc, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &995317291 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11479816, guid: 45fad11a09928c0489523035df4774c3,
+  m_PrefabParentObject: {fileID: 11413766, guid: 45fad11a09928c0489523035df4774c3,
     type: 2}
   m_PrefabInternal: {fileID: 995317289}
   m_Script: {fileID: 11500000, guid: a8ac393ca06ad69408c33fba04bca326, type: 3}
---- !u!114 &995317297 stripped
+--- !u!114 &995317300 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11439376, guid: 45fad11a09928c0489523035df4774c3,
+  m_PrefabParentObject: {fileID: 11414398, guid: 45fad11a09928c0489523035df4774c3,
     type: 2}
   m_PrefabInternal: {fileID: 995317289}
   m_Script: {fileID: 11500000, guid: f4f8dc2fcee08fc4cbb35189420c551e, type: 3}
---- !u!1 &1190815663
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1190815665}
-  - 114: {fileID: 1190815664}
-  m_Layer: 0
-  m_Name: Auudience
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1190815664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1190815663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d0a49bb0d324c40bd2a5532a9fb2f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1190815665
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1190815663}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: -.892215073, z: 1.35490477}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
 --- !u!81 &1625493640 stripped
 AudioListener:
   m_PrefabParentObject: {fileID: 8133368, guid: e3503f069a2a0f84db3295820254130b,
@@ -541,7 +542,7 @@ GameObject:
   - 4: {fileID: 1842385253}
   - 114: {fileID: 1842385252}
   m_Layer: 0
-  m_Name: Pomidors
+  m_Name: Pomidory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -663,7 +664,7 @@ Prefab:
     - target: {fileID: 11465580, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: _generator
       value: 
-      objectReference: {fileID: 107611406}
+      objectReference: {fileID: 107611410}
     - target: {fileID: 100874, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: m_Name
       value: Canvas (1)
@@ -671,7 +672,7 @@ Prefab:
     - target: {fileID: 11474102, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: _generator
       value: 
-      objectReference: {fileID: 995317297}
+      objectReference: {fileID: 995317300}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3018793458343148ac4788036ac6cab, type: 2}
   m_IsPrefabParent: 0

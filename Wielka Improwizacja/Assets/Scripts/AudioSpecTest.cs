@@ -28,8 +28,6 @@ public class AudioSpecTest : MonoBehaviour {
 		{
 			band[i] = 0;
 		}
-
-		//InvokeRepeating("check", 0, 1f/15f); // update at 15 fps
 	}
 
 	IEnumerator _check;
@@ -47,7 +45,7 @@ public class AudioSpecTest : MonoBehaviour {
 	{
 		while ( true){ 
 			yield return new WaitForSeconds(sampleInterval);
-			AudioListener.GetOutputData (freqData,0);//.GetSpectrumData(freqData, 0, FFTWindow.Rectangular);
+			AudioListener.GetOutputData (freqData,0);
 			
 			int k = 0;
 			int crossover = 2; 
@@ -55,11 +53,11 @@ public class AudioSpecTest : MonoBehaviour {
 			{  
 				var d = freqData[i];
 				var b = band[k];       
-				band[k] = (d > b)? d:b;   // find the max as the peak value in that frequency band.
+				band[k] = (d > b)? d:b;   
 				if ( i>crossover-3)
 				{
 					k++;
-					crossover *= 2;   // frequency crossover point for each band.
+					crossover *= 2;   
 				}  
 			}
 

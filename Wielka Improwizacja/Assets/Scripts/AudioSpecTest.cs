@@ -81,6 +81,6 @@ public class AudioSpecTest : MonoBehaviour {
 		else if ( v <= 0.75f & v > 0.5f ) return MOVE.LEFT;
 		else if ( v <= 0.5f & v > 0.25f ) return MOVE.RIGHT;
 		else if ( v <= 0.25f & v >= 0 ) return MOVE.DOWN;
-		else throw new UnityException("error v="+ v );
+		else return (MOVE) Random.Range(0,4);
 	}
 }

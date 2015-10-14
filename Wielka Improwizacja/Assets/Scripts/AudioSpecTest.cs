@@ -6,7 +6,7 @@ public delegate void OnMoveBeingGenerated (MOVE m );
 public class AudioSpecTest : MonoBehaviour {
 	public OnMoveBeingGenerated onMoveBeingGenerated;
 
-	float[] freqData = new float[8192];
+	float[] freqData = new float[4096];
 	public AudioListener listener;
 	
 	float[] band;

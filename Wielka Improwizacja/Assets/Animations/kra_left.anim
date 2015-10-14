@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: jump
+  m_Name: kra_left
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -18,13 +18,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: c3ca6379e18018c41b3ab4c3b7bc410f, type: 3}
+      value: {fileID: 21300000, guid: 77fb4811d1d56aa498bb037e59c0c512, type: 3}
     - time: .0833333358
-      value: {fileID: 21300000, guid: 15cac9eefc6f9604ebc9f9995497660d, type: 3}
+      value: {fileID: 21300000, guid: df360ad0230b9334ea2c7b57c15dae31, type: 3}
     - time: .166666672
-      value: {fileID: 21300000, guid: a28dc07525d49f644a7f15237b0db2b6, type: 3}
+      value: {fileID: 21300000, guid: 8e77cf485493a09469e0b094b87f00b7, type: 3}
     - time: .25
-      value: {fileID: 21300000, guid: 9a8c400976b7ea64ba59a90d8445c749, type: 3}
+      value: {fileID: 21300000, guid: 9005195d7c42c7f45863bdde8a907529, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -43,10 +43,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: c3ca6379e18018c41b3ab4c3b7bc410f, type: 3}
-    - {fileID: 21300000, guid: 15cac9eefc6f9604ebc9f9995497660d, type: 3}
-    - {fileID: 21300000, guid: a28dc07525d49f644a7f15237b0db2b6, type: 3}
-    - {fileID: 21300000, guid: 9a8c400976b7ea64ba59a90d8445c749, type: 3}
+    - {fileID: 21300000, guid: 77fb4811d1d56aa498bb037e59c0c512, type: 3}
+    - {fileID: 21300000, guid: df360ad0230b9334ea2c7b57c15dae31, type: 3}
+    - {fileID: 21300000, guid: 8e77cf485493a09469e0b094b87f00b7, type: 3}
+    - {fileID: 21300000, guid: 9005195d7c42c7f45863bdde8a907529, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
@@ -54,7 +54,7 @@ AnimationClip:
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0

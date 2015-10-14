@@ -1,64 +1,138 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
+using System.ComponentModel;
+using System.Linq;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
-public enum MOVE { UP , DOWN , LEFT, RIGHT }
+public enum MOVE { UP, DOWN, LEFT, RIGHT }
 
-public class MoveGen : MonoBehaviour {
-	public Sprite up,down,left,right;
-	public Image[] arrows;
-	public float genInterval;
+public class MoveGen : MonoBehaviour
+{
 
-	static MOVE[] tableMut = { MOVE.UP , MOVE.DOWN , MOVE.LEFT, MOVE.RIGHT };
+    public event Action<Move> NewMoveGenerated;
+    public float genInterval;
 
-	public MOVE[] moves;//  { get; private set; } 
-	public MOVE currentMove { 
-		get {
-			return moves[currentIndex];
-		}
-	} 
+    static MOVE[] tableMut = { MOVE.UP, MOVE.DOWN, MOVE.LEFT, MOVE.RIGHT };
 
-	int currentIndex;
+    public Move[] moves;//  { get; private set; } 
+    public Move currentMove
+    {
+        get
+        {
+            return moves.FirstOrDefault(a => a.IsCurrent());
+        }
+    }
 
-	void Awake (){ 
-		GenMove(arrows.Length);
-	}
+    int currentIndex;
 
-	IEnumerator _gen;
+    void Awake()
+    {
+        StartGen();
+    }
 
-	public void StartGen () {
-		if ( _gen == null ) 
-			StartCoroutine( _gen = Gen() );
-	}
+    IEnumerator _gen;
 
-	public void StopGen () {
-		if ( _gen != null ) {
-			StopCoroutine(_gen);
-			_gen = null;
-		}
-	}
+    public void StartGen()
+    {
+        if (_gen == null)
+            StartCoroutine(_gen = Gen());
+    }
 
-	void OnGUI () {
-		if ( GUILayout.Button("Start Gen") ) {
-			StartGen();
-		}
-		if ( GUILayout.Button("Stop Gen") ) {
-			StopGen();
-		}
-	}
+    public void StopGen()
+    {
+        if (_gen != null)
+        {
+            StopCoroutine(_gen);
+            _gen = null;
+        }
+    }
 
-	IEnumerator Gen () {
-		while (true ) {
-			yield return new WaitForSeconds(genInterval);
-			GenMove(1);
-		}
-	}
+    void OnGUI()
+    {
+        if (GUILayout.Button("Start Gen"))
+        {
+            StartGen();
+        }
+        if (GUILayout.Button("Stop Gen"))
+        {
+            StopGen();
+        }
+    }
 
-	void GenMove (int nb ) {
-		while ( nb > 0 ) {
-			moves[currentIndex = ( (currentIndex+1) % moves.Length )]  = tableMut[Random.Range(0,tableMut.Length)];
-			nb --;
-		}
-	}
-	
+    IEnumerator Gen()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(genInterval);
+            GenMove(1);
+        }
+    }
+
+    void GenMove(int nb)
+    {
+        while (nb > 0)
+        {
+            currentIndex = (currentIndex + 1) % moves.Length;
+            moves[currentIndex] = new Move(tableMut[Random.Range(0, tableMut.Length)], Time.time + genInterval / 2, 0.5f);
+            if (NewMoveGenerated != null) NewMoveGenerated(moves[currentIndex]);
+            nb--;
+        }
+    }
+
+    [Serializable]
+    public class Move
+    {
+        [SerializeField]
+        private MOVE _direction;
+
+        private bool _used;
+        private bool _skipped;
+        private float _spawnedTime;
+        private float _time;
+        private float _timeTolerance;
+        public MOVE Direction { get { return _direction; } }
+        public float Progress
+        {
+            get
+            {
+                return (Time.time - _spawnedTime) / lifeTime;
+            }
+        }
+        private float lifeTime { get { return (_time - _spawnedTime) * 2; } }
+        public event Action<bool> Used;
+
+        public Move(MOVE direction, float time, float timeTolerance)
+        {
+            _spawnedTime = Time.time;
+            _direction = direction;
+            _time = time;
+            _timeTolerance = timeTolerance;
+        }
+
+        public bool IsCurrent()
+        {
+            if (_used || _skipped) return false;
+            if (Time.time > _time - _timeTolerance && Time.time < _time + _timeTolerance)
+                return true;
+            if (Time.time > _time + _timeTolerance)
+            {
+                _skipped = true;
+                if (Used != null) Used(false);
+            }
+            return false;
+        }
+
+        public bool Check(MOVE direction)
+        {
+            if (_used) return false;
+            if (_direction == direction)
+            {
+                _used = true;
+                if (Used != null) Used(true);
+            }
+            return _direction == direction;
+        }
+    }
 }

@@ -98,6 +98,7 @@ public class MoveGen : MonoBehaviour
             {
                 _used = true;
                 if (Used != null) Used(true);
+            AudienceSatisfaction.Instance.Good();
             }
             return _direction == direction;
         }
@@ -108,6 +109,7 @@ public class MoveGen : MonoBehaviour
             if (Used != null) Used(false);
             if (_player==null) return;
             Spawner.Instance.ThrowPomidorAt(_player.position,2);
+            AudienceSatisfaction.Instance.Bad();
         }
     }
 }

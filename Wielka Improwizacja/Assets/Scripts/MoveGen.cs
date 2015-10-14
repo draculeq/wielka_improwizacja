@@ -105,7 +105,9 @@ public class MoveGen : MonoBehaviour
         {
             _skipped = true;
             if (Used != null) Used(false);
-            Spawner.Instance.ThrowPomidorAt(_player.position);
+			Debug.Log("Spawner.Instance == null ? " + (Spawner.Instance == null));
+			Debug.Log("_player == null ? " + (_player == null));
+            Spawner.Instance.ThrowPomidorAt(_player.position,2);
         }
     }
 }

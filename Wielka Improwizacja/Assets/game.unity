@@ -136,25 +136,28 @@ Prefab:
       propertyPath: _playerIndex
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11489082, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+      propertyPath: listener
+      value: 
+      objectReference: {fileID: 1625493640}
+    - target: {fileID: 11489082, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+      propertyPath: samplePointsNumber
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11437534, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11485234, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11469356, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11432394, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11479816, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11414398, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11413766, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &107611400 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11432394, guid: 45fad11a09928c0489523035df4774c3,
-    type: 2}
-  m_PrefabInternal: {fileID: 107611398}
-  m_Script: {fileID: 11500000, guid: a8ac393ca06ad69408c33fba04bca326, type: 3}
 --- !u!4 &107611405 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400458, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_PrefabInternal: {fileID: 107611398}
---- !u!114 &107611410 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11414398, guid: 45fad11a09928c0489523035df4774c3,
-    type: 2}
-  m_PrefabInternal: {fileID: 107611398}
-  m_Script: {fileID: 11500000, guid: f4f8dc2fcee08fc4cbb35189420c551e, type: 3}
 --- !u!1001 &559653828
 Prefab:
   m_ObjectHideFlags: 0
@@ -321,6 +324,7 @@ MonoBehaviour:
   mode: 1
   player1: {fileID: 107611405}
   throwFlowerRandomRangeOffset: .75
+  throwPomidorRandomRangeOffset: 1.87
 --- !u!4 &702052214
 Transform:
   m_ObjectHideFlags: 0
@@ -512,15 +516,25 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: deb21265e16240b40979d75a404a24fc, type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 21222422, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7423a4d986f6172419577c552052e4cc,
+        type: 3}
+    - target: {fileID: 11489082, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+      propertyPath: samplePointsNumber
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11437534, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11485234, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11479816, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11439376, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11413766, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11432394, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+    - {fileID: 11469356, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 45fad11a09928c0489523035df4774c3, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &995317291 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11413766, guid: 45fad11a09928c0489523035df4774c3,
-    type: 2}
-  m_PrefabInternal: {fileID: 995317289}
-  m_Script: {fileID: 11500000, guid: a8ac393ca06ad69408c33fba04bca326, type: 3}
 --- !u!114 &995317300 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11414398, guid: 45fad11a09928c0489523035df4774c3,
@@ -656,15 +670,15 @@ Prefab:
     - target: {fileID: 11407786, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: _counter
       value: 
-      objectReference: {fileID: 995317291}
+      objectReference: {fileID: 0}
     - target: {fileID: 11497750, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: _counter
       value: 
-      objectReference: {fileID: 107611400}
+      objectReference: {fileID: 0}
     - target: {fileID: 11465580, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: _generator
       value: 
-      objectReference: {fileID: 107611410}
+      objectReference: {fileID: 0}
     - target: {fileID: 100874, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: m_Name
       value: Canvas (1)

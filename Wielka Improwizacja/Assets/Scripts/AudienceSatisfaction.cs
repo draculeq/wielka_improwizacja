@@ -20,8 +20,9 @@ public class AudienceSatisfaction : MonoBehaviour
         Satisfaction -= Speed * Time.deltaTime;
         if (Satisfaction < 0)
         {
-            Debug.Log("GAME OVER");
-            enabled = false;
+			enabled = false;
+			PlayerPrefs.SetInt("winner",0);
+			Application.LoadLevel("game_end");
         }
 
         if (Satisfaction < 100)

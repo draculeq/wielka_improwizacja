@@ -9,7 +9,7 @@ public class OnCollisionCallBack : MonoBehaviour {
 		var poolableOb = other.gameObject.GetComponent<PoolableObject>();
 		if ( poolableOb != null ) {
 			if ( poolableOb.directContactOnly & poolableOb.isOnGround ) return;
-			counter.AddPoint(poolableOb.point);
+			if ( counter != null ) counter.AddPoint(poolableOb.point);
 			poolableOb.Deactivate();
 		}
 	}

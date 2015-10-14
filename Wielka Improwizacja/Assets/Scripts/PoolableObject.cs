@@ -7,11 +7,14 @@ public class PoolableObject : MonoBehaviour
 	public int point = 1;
 	public float lyingTime = 3f;
 	bool deactivated;
+
+
 	public bool IsFree () {
 		return deactivated;
 	}
 
 	public void Deactivate() {
+		GetComponent<Rigidbody>().velocity = Vector3.zero;
 		gameObject.SetActive(false);
 		deactivated = true;
 		if ( _t != null ) {

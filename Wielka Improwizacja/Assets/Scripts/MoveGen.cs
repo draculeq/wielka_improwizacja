@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public enum MOVE { UP, DOWN, LEFT, RIGHT }
+public enum MOVE : int { UP, DOWN, LEFT, RIGHT }
 
 public class MoveGen : MonoBehaviour
 {

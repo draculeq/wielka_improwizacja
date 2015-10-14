@@ -34,7 +34,7 @@ public class MoveGen : MonoBehaviour
     private void OnMoveBeingGenerated(MOVE m)
     {
         currentIndex = (currentIndex + 1)%moves.Length;
-        moves[currentIndex] = new Move(tableMut[Random.Range(0, tableMut.Length)], lifeTime, 0.3f);
+        moves[currentIndex] = new Move(tableMut[Random.Range(0, tableMut.Length)], lifeTime, 0.3f,transform);
         if (NewMoveGenerated != null) NewMoveGenerated(moves[currentIndex]);
     }
 
@@ -50,6 +50,7 @@ public class MoveGen : MonoBehaviour
         private float _spawnedTime;
         public float _time;
         private float _timeTolerance;
+        private Transform _player;
         public MOVE Direction { get { return _direction; } }
         public float Progress
         {
@@ -62,13 +63,14 @@ public class MoveGen : MonoBehaviour
         public float _lifeTime;
         public event Action<bool> Used;
 
-        public Move(MOVE direction, float lifeTime, float timeTolerance)
+        public Move(MOVE direction, float lifeTime, float timeTolerance, Transform player)
         {
             _lifeTime = lifeTime;
             _spawnedTime = Time.time;
             _direction = direction;
             _time = _spawnedTime + _lifeTime/2;
             _timeTolerance = timeTolerance;
+            _player = player;
         }
 
         public bool IsCurrent()
@@ -103,6 +105,7 @@ public class MoveGen : MonoBehaviour
         {
             _skipped = true;
             if (Used != null) Used(false);
+            Spawner.Instance.ThrowPomidorAt(_player.position);
         }
     }
 }

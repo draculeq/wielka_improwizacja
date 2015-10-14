@@ -14,11 +14,11 @@ public class AudioController : MonoBehaviour {
 	}	
 
 	public void PomidorCrashed () {
-		au_source.PlayOneShot(slash,1.9f);
+		au_source.PlayOneShot(slash,0.05f);
 	}
-
+    
 	public void KwiatekCaptured (){
-		au_source.PlayOneShot(gwizd,0.7f);
+		au_source.PlayOneShot(gwizd,0.02f);
 	}
 
 	public void BothFailed () {

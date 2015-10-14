@@ -110,6 +110,7 @@
      <Compile Include="Assets\Scripts\UIArrow.cs" />
      <Compile Include="Assets\Scripts\UIScore.cs" />
      <Compile Include="Assets\UIController.cs" />
+     <Compile Include="Assets\UISatisfaction.cs" />
      <None Include="Assets\Rewired\Documentation\licences.txt" />
      <None Include="Assets\Rewired\Documentation\ReadMe.txt" />
      <None Include="Assets\Rewired\Documentation\ReleaseNotes.txt" />

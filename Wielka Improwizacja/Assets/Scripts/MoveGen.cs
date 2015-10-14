@@ -100,6 +100,7 @@ public class MoveGen : MonoBehaviour
 				
 				Spawner.Instance.ThrowKwiatekAround(_player.position,3);
                 if (Used != null) Used(true);
+            AudienceSatisfaction.Instance.Good();
             }
             return _direction == direction;
         }
@@ -110,6 +111,7 @@ public class MoveGen : MonoBehaviour
             if (Used != null) Used(false);
             if (_player==null) return;
             Spawner.Instance.ThrowPomidorAt(_player.position,2);
+            AudienceSatisfaction.Instance.Bad();
         }
     }
 }

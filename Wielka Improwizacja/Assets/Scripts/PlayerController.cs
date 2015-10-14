@@ -35,42 +35,64 @@ public class PlayerController : MonoBehaviour
 
     private void Animations(Vector2 _move)
     {
-        if (_move.x != 0 | _move.y != 0)
-        {
-            if (animator != null) animator.Play("move");
-        }
+       
 
         if (_input.SkillLeft())
         {
             if (animator != null) animator.Play("left");
-        }
-
-        if (_input.SkillDown())
+        } else if (_input.SkillRight())
+		{
+			if (animator != null) animator.Play("right");
+		} else if (_input.SkillDown())
         {
             if (animator != null) animator.Play("crouch");
-        }
-
-        if (_input.SkillUp())
+        } else if (_input.SkillUp())
         {
             if (animator != null) animator.Play("jump");
-        }
+		} else if (_move.x != 0 | _move.y != 0)
+		{
+
+			if (animator != null) {
+				if ( animator.GetCurrentAnimatorStateInfo(0).IsName("idle") ) 
+					animator.Play("move");
+			}
+		}
     }
 
     private void Skills()
     {
         var currentMove = _generator.currentMove;
-        if (currentMove==null) return;
+        if (currentMove == null)
+        {
+            return;
+        }
         if (_input.SkillLeft())
+        {
             if (currentMove.Check(MOVE.LEFT))
-                Debug.Log("Left");
+            { }
+            else
+                currentMove.Fail();
+        }
         if (_input.SkillRight())
+        {
             if (currentMove.Check(MOVE.RIGHT))
-                Debug.Log("Right");
+            { }
+            else
+                currentMove.Fail();
+        }
         if (_input.SkillUp())
+        {
             if (currentMove.Check(MOVE.UP))
-                Debug.Log("Up");
+            { }
+            else
+                currentMove.Fail();
+        }
         if (_input.SkillDown())
+        {
             if (currentMove.Check(MOVE.DOWN))
-                Debug.Log("Down");
+            { }
+            else
+                currentMove.Fail();
+        }
     }
 }

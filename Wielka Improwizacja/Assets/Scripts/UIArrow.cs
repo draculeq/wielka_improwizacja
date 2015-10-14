@@ -20,7 +20,7 @@ public class UIArrow : MonoBehaviour
 
     void Update()
     {
-        GetComponent<RectTransform>().anchoredPosition = new Vector2(Mathf.Lerp(200, -200, _move.Progress), 0);
+        GetComponent<RectTransform>().anchoredPosition = new Vector2(Mathf.Lerp(190, -200, _move.Progress), 0);
         if (_move.Progress >= 1) Destroy(gameObject);
     }
 }

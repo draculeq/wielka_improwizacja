@@ -93,6 +93,7 @@
      <Compile Include="Assets\Rewired\Internal\Scripts\Misc\ExternalTools.cs" />
      <Compile Include="Assets\Rewired\Internal\Scripts\Platforms\Ouya\OuyaInputSource.cs" />
      <Compile Include="Assets\Scripts\ArrowsPanel.cs" />
+     <Compile Include="Assets\Scripts\AudienceSatisfaction.cs" />
      <Compile Include="Assets\Scripts\AudioSpecTest.cs" />
      <Compile Include="Assets\Scripts\MoveGen.cs" />
      <Compile Include="Assets\Scripts\OnCollisionCallBack.cs" />

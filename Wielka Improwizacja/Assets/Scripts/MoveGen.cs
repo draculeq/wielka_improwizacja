@@ -1,27 +1,25 @@
 ﻿using System;
 using UnityEngine;
-using System.Collections;
-using System.ComponentModel;
 using System.Linq;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public enum MOVE : int { UP, DOWN, LEFT, RIGHT }
 
 public class MoveGen : MonoBehaviour
 {
-
     public event Action<Move> NewMoveGenerated;
-    public float genInterval;
+    public float lifeTime;
+    public float timeTolerance;
 
     static MOVE[] tableMut = { MOVE.UP, MOVE.DOWN, MOVE.LEFT, MOVE.RIGHT };
 
-    public Move[] moves;//  { get; private set; } 
+    public Move[] moves;
     public Move currentMove
     {
         get
         {
-            return moves.FirstOrDefault(a => a.IsCurrent());
+            var a = moves.FirstOrDefault(b => b.IsCurrent());
+            return a;
         }
     }
 
@@ -29,49 +27,18 @@ public class MoveGen : MonoBehaviour
 
     void Awake()
     {
-		var s = GetComponent<AudioSpecTest>();
-		s.onMoveBeingGenerated = (m ) => {
-			if (NewMoveGenerated != null) NewMoveGenerated(new Move(m, Time.time + genInterval / 2, 0.5f));
-		};
-		s.StartGen();
+        var s = GetComponent<AudioSpecTest>();
+        s.onMoveBeingGenerated = OnMoveBeingGenerated;
+        s.StartGen();
     }
 
-    IEnumerator _gen;
-
-    public void StartGen()
+    private void OnMoveBeingGenerated(MOVE m)
     {
-        if (_gen == null)
-            StartCoroutine(_gen = Gen());
+        currentIndex = (currentIndex + 1)%moves.Length;
+        moves[currentIndex] = new Move(tableMut[Random.Range(0, tableMut.Length)], lifeTime, timeTolerance, transform);
+        if (NewMoveGenerated != null) NewMoveGenerated(moves[currentIndex]);
     }
 
-    public void StopGen()
-    {
-        if (_gen != null)
-        {
-            StopCoroutine(_gen);
-            _gen = null;
-        }
-    }
-
-    IEnumerator Gen()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(genInterval);
-            GenMove(1);
-        }
-    }
-
-    void GenMove(int nb)
-    {
-        while (nb > 0)
-        {
-            currentIndex = (currentIndex + 1) % moves.Length;
-            moves[currentIndex] = new Move(tableMut[Random.Range(0, tableMut.Length)], Time.time + genInterval / 2, 0.5f);
-            if (NewMoveGenerated != null) NewMoveGenerated(moves[currentIndex]);
-            nb--;
-        }
-    }
 
     [Serializable]
     public class Move
@@ -82,49 +49,65 @@ public class MoveGen : MonoBehaviour
         private bool _used;
         private bool _skipped;
         private float _spawnedTime;
-        private float _time;
+        public float _time;
         private float _timeTolerance;
+        private Transform _player;
         public MOVE Direction { get { return _direction; } }
         public float Progress
         {
             get
             {
-                return (Time.time - _spawnedTime) / lifeTime;
+                return (Time.time - _spawnedTime) / _lifeTime;
             }
         }
-        private float lifeTime { get { return (_time - _spawnedTime) * 2; } }
+
+        public float _lifeTime;
         public event Action<bool> Used;
 
-        public Move(MOVE direction, float time, float timeTolerance)
+        public Move(MOVE direction, float lifeTime, float timeTolerance, Transform player)
         {
+            _lifeTime = lifeTime;
             _spawnedTime = Time.time;
             _direction = direction;
-            _time = time;
+            _time = _spawnedTime + _lifeTime/2;
             _timeTolerance = timeTolerance;
+            _player = player;
         }
 
         public bool IsCurrent()
         {
             if (_used || _skipped) return false;
             if (Time.time > _time - _timeTolerance && Time.time < _time + _timeTolerance)
+            {
                 return true;
+            }
             if (Time.time > _time + _timeTolerance)
             {
-                _skipped = true;
-                if (Used != null) Used(false);
+                Fail();
             }
             return false;
         }
 
         public bool Check(MOVE direction)
         {
-            if (_used) return false;
+            if (_used)
+            {
+                return false;
+            }
             if (_direction == direction)
             {
                 _used = true;
                 if (Used != null) Used(true);
             }
             return _direction == direction;
+        }
+
+        public void Fail()
+        {
+            _skipped = true;
+            if (Used != null) Used(false);
+            if (_player==null) return;
+            Spawner.Instance.ThrowPomidorAt(_player.position,2);
         }
     }
 }

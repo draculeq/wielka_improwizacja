@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 454364}
   - 114: {fileID: 11413668}
+  - 114: {fileID: 11406952}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -28,6 +29,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11406952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d0a49bb0d324c40bd2a5532a9fb2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Satisfaction: 50
+  Speed: 1
+  punishment: 3
+  reward: 3
+  winTimer: -1
 --- !u!114 &11413668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -44,7 +61,6 @@ MonoBehaviour:
   strength: 38
   deltaStrength: 4
   mode: 1
-  player1: {fileID: 0}
   throwFlowerRandomRangeOffset: .75
   throwPomidorRandomRangeOffset: 1
 --- !u!1001 &100100000

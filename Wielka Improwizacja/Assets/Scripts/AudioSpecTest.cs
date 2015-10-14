@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public delegate void OnMoveBeingGenerated (MOVE m );
+
 public class AudioSpecTest : MonoBehaviour {
+	public OnMoveBeingGenerated onMoveBeingGenerated;
 
 	float[] freqData = new float[8192];
 	public AudioListener listener;
@@ -26,14 +29,6 @@ public class AudioSpecTest : MonoBehaviour {
 			band[i] = 0;
 		}
 
-		for(int i=0 ; i < 25; i ++ ) {
-			mutationTable[i] = MOVE.DOWN;
-			mutationTable[25+i] = MOVE.LEFT;
-			mutationTable[50+i] = MOVE.RIGHT;
-			mutationTable[75+i] = MOVE.UP;
-		}
-
-		StartCoroutine(_check= Check ());
 		//InvokeRepeating("check", 0, 1f/15f); // update at 15 fps
 	}
 
@@ -41,6 +36,13 @@ public class AudioSpecTest : MonoBehaviour {
 	public int samplePointsNumber;
 	public float sampleInterval;
 
+	public void StartGen () {
+		if ( _check == null ) StartCoroutine(_check= Check ());
+	}
+
+	public void StopGen () {
+		if ( _check != null ) StopCoroutine(_check);
+	}
 	IEnumerator Check()
 	{
 		while ( true){ 
@@ -70,13 +72,15 @@ public class AudioSpecTest : MonoBehaviour {
 			}
 			sum /= (float)samplePointsNumber;
 
-			Debug.Log("Gen Move = " + ConvertToMove(sum));
+			onMoveBeingGenerated( ConvertToMove(sum));
 		}
 	}
 
-	MOVE[] mutationTable = new MOVE[100];
-
 	MOVE ConvertToMove ( float v ) {
-		return mutationTable[Mathf.FloorToInt (v*100)];
+		if ( v > 0.75f & v <= 1 ) return MOVE.UP;
+		else if ( v <= 0.75f & v > 0.5f ) return MOVE.LEFT;
+		else if ( v <= 0.5f & v > 0.25f ) return MOVE.RIGHT;
+		else if ( v <= 0.25f & v >= 0 ) return MOVE.DOWN;
+		else throw new UnityException("error v="+ v );
 	}
 }

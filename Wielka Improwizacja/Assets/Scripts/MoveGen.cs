@@ -29,7 +29,11 @@ public class MoveGen : MonoBehaviour
 
     void Awake()
     {
-        StartGen();
+		var s = GetComponent<AudioSpecTest>();
+		s.onMoveBeingGenerated = (m ) => {
+			if (NewMoveGenerated != null) NewMoveGenerated(new Move(m, Time.time + genInterval / 2, 0.5f));
+		};
+		s.StartGen();
     }
 
     IEnumerator _gen;
@@ -46,18 +50,6 @@ public class MoveGen : MonoBehaviour
         {
             StopCoroutine(_gen);
             _gen = null;
-        }
-    }
-
-    void OnGUI()
-    {
-        if (GUILayout.Button("Start Gen"))
-        {
-            StartGen();
-        }
-        if (GUILayout.Button("Stop Gen"))
-        {
-            StopGen();
         }
     }
 

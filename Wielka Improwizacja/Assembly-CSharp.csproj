@@ -92,6 +92,7 @@
      <Compile Include="Assets\Rewired\Internal\Scripts\InputManager.cs" />
      <Compile Include="Assets\Rewired\Internal\Scripts\Misc\ExternalTools.cs" />
      <Compile Include="Assets\Rewired\Internal\Scripts\Platforms\Ouya\OuyaInputSource.cs" />
+     <Compile Include="Assets\Scripts\ArrowsPanel.cs" />
      <Compile Include="Assets\Scripts\AudioSpecTest.cs" />
      <Compile Include="Assets\Scripts\MoveGen.cs" />
      <Compile Include="Assets\Scripts\OnCollisionCallBack.cs" />
@@ -103,6 +104,7 @@
      <Compile Include="Assets\Scripts\PoolableObject.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\StaticVariables.cs" />
+     <Compile Include="Assets\Scripts\UIArrow.cs" />
      <None Include="Assets\Rewired\Documentation\licences.txt" />
      <None Include="Assets\Rewired\Documentation\ReadMe.txt" />
      <None Include="Assets\Rewired\Documentation\ReleaseNotes.txt" />

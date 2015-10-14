@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class PointCounter : MonoBehaviour
 {
-	int p;
-    public event Action<int> PointAdded; 
+	public bool usingLeftPanel;
+	[SerializeField] UIScore ui_score;
+	int totalPoints;
+	PlayerController contro;
+
 	void Awake () {
-		p=0;
+		totalPoints=0;
+		contro = GetComponent<PlayerController>();
 	}
 	public void AddPoint (int points ) {
-		p += points;
-		Debug.Log("player get points = " + points + " PointAdded == null? " + (PointAdded == null) );
-	    if (PointAdded != null) PointAdded(p);
-	}
-
-	public bool NullCheck () {
-		return PointAdded == null;
+		totalPoints += points;
+		if ( usingLeftPanel ) UIController.Instance.DisplayLeftScore(totalPoints);
+		else UIController.Instance.DisplayRightScore(totalPoints);
 	}
 }
 

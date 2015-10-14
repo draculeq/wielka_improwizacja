@@ -59,18 +59,37 @@ public class PlayerController : MonoBehaviour
     private void Skills()
     {
         var currentMove = _generator.currentMove;
-        if (currentMove==null) return;
+        if (currentMove == null)
+        {
+            return;
+        }
         if (_input.SkillLeft())
+        {
             if (currentMove.Check(MOVE.LEFT))
-                Debug.Log("Left");
+            { }
+            else
+                currentMove.Fail();
+        }
         if (_input.SkillRight())
+        {
             if (currentMove.Check(MOVE.RIGHT))
-                Debug.Log("Right");
+            { }
+            else
+                currentMove.Fail();
+        }
         if (_input.SkillUp())
+        {
             if (currentMove.Check(MOVE.UP))
-                Debug.Log("Up");
+            { }
+            else
+                currentMove.Fail();
+        }
         if (_input.SkillDown())
+        {
             if (currentMove.Check(MOVE.DOWN))
-                Debug.Log("Down");
+            { }
+            else
+                currentMove.Fail();
+        }
     }
 }

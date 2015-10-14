@@ -144,6 +144,10 @@ Prefab:
       propertyPath: samplePointsNumber
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11439376, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+      propertyPath: timeTolerance
+      value: .100000001
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11437534, guid: 45fad11a09928c0489523035df4774c3, type: 2}
     - {fileID: 11485234, guid: 45fad11a09928c0489523035df4774c3, type: 2}
@@ -525,6 +529,10 @@ Prefab:
       propertyPath: samplePointsNumber
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 11414398, guid: 45fad11a09928c0489523035df4774c3, type: 2}
+      propertyPath: timeTolerance
+      value: .100000001
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11437534, guid: 45fad11a09928c0489523035df4774c3, type: 2}
     - {fileID: 11485234, guid: 45fad11a09928c0489523035df4774c3, type: 2}
@@ -541,6 +549,18 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 995317289}
   m_Script: {fileID: 11500000, guid: f4f8dc2fcee08fc4cbb35189420c551e, type: 3}
+--- !u!114 &1472330899 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11439376, guid: 45fad11a09928c0489523035df4774c3,
+    type: 2}
+  m_PrefabInternal: {fileID: 107611398}
+  m_Script: {fileID: 11500000, guid: f4f8dc2fcee08fc4cbb35189420c551e, type: 3}
+--- !u!114 &1472330900 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11418292, guid: 45fad11a09928c0489523035df4774c3,
+    type: 2}
+  m_PrefabInternal: {fileID: 107611398}
+  m_Script: {fileID: 11500000, guid: a8ac393ca06ad69408c33fba04bca326, type: 3}
 --- !u!81 &1625493640 stripped
 AudioListener:
   m_PrefabParentObject: {fileID: 8133368, guid: e3503f069a2a0f84db3295820254130b,
@@ -674,11 +694,11 @@ Prefab:
     - target: {fileID: 11497750, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: _counter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1472330900}
     - target: {fileID: 11465580, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: _generator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1472330899}
     - target: {fileID: 100874, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: m_Name
       value: Canvas (1)

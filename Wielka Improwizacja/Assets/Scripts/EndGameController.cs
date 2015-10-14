@@ -14,27 +14,27 @@ public class EndGameController : MonoBehaviour {
 			p2.enabled = false;
 			p2.GetComponent<SpriteRenderer>().sprite = kra_lose;
 			StartCoroutine(CrowdBoo());
+			AudioController.Instance.BothFailed();
 		}
 		else if ( winner == 1 ) {
 			p1.Play("win");
 			p2.enabled = false;
 			p2.GetComponent<SpriteRenderer>().sprite = kra_lose;
+			AudioController.Instance.Win();
 		}
 		else if ( winner == 2 ) {
 			p2.Play("win");
 			p1.enabled = false;
 			p1.GetComponent<SpriteRenderer>().sprite = gor_lose;
+			AudioController.Instance.Win();
 		}else if ( winner == 3 ) {
 			p1.Play("win");
 			p2.Play("win");
+			AudioController.Instance.Win();
 		} else {
-			// default
-			p1.Play("win");
-			p2.enabled = false;
-			p2.GetComponent<SpriteRenderer>().sprite = kra_lose;
-
+			 throw new UnityException("wuut? available : 0 / 1 / 2 / 3");
 		}
-		//else throw new UnityException("wuut? available : 0 / 1 / 2");
+		//
 	}
 
 	IEnumerator CrowdBoo () {

@@ -59,40 +59,77 @@ public class PlayerController : MonoBehaviour
 		}
     }
 
+	
+	int success_combo_count = 0;
+	int next_combo = 4;
+
+	void ComboCount () {
+		success_combo_count ++;
+		Debug.Log("success_combo_count = "+ success_combo_count + " next_combo="+next_combo);
+		if ( success_combo_count > next_combo) {
+			AudioController.Instance.RandomComboSound();
+			next_combo += 3;
+		}
+	}
+
+	void ComboFail () {
+		success_combo_count = 0;
+		next_combo = 4;
+	}
+
     private void Skills()
     {
         var currentMove = _generator.currentMove;
+
         if (currentMove == null)
         {
             return;
-        }
+		}
+		currentMove.onFailCallBack = ComboFail;
+
         if (_input.SkillLeft())
         {
             if (currentMove.Check(MOVE.LEFT))
-            { }
-            else
-                currentMove.Fail();
+			{ 
+				ComboCount(); 
+			}
+            else 
+			{
+				currentMove.Fail();
+			}
         }
         if (_input.SkillRight())
         {
             if (currentMove.Check(MOVE.RIGHT))
-            { }
-            else
-                currentMove.Fail();
+            {
+				ComboCount(); 
+			}
+			else 
+			{
+				currentMove.Fail();
+			}
         }
         if (_input.SkillUp())
         {
             if (currentMove.Check(MOVE.UP))
-            { }
-            else
-                currentMove.Fail();
+            {
+				ComboCount(); 
+			}
+			else 
+			{
+				currentMove.Fail();
+			}
         }
         if (_input.SkillDown())
         {
             if (currentMove.Check(MOVE.DOWN))
-            { }
-            else
-                currentMove.Fail();
+            {
+				ComboCount(); 
+			}
+			else 
+			{
+				currentMove.Fail();
+			}
         }
     }
 }

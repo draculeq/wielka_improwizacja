@@ -4,16 +4,17 @@ using System.Collections;
 [RequireComponent(typeof(AudioSource))]
 public class AudioController : MonoBehaviour {
 	AudioSource au_source;
-	[SerializeField] AudioClip gwizd,slash,kompromitacja, wspaniale, mistrz, kombo, znakomicie;
+	[SerializeField] AudioClip gwizd,slash,kompromitacja, wspaniale, mistrz, kombo, znakomicie,nieslychanie;
 	
 	void Awake () {
-		if ( GameObject.FindObjectOfType (typeof(AudioController)) == null ) {
+		if ( GameObject.FindObjectsOfType (typeof(AudioController)).Length <= 1 ) {
 			au_source = GetComponent<AudioSource>();
+			DontDestroyOnLoad(gameObject);
 		} else DestroyObject(gameObject);
 	}	
 
 	public void PomidorCrashed () {
-		au_source.PlayOneShot(slash,0.9f);
+		au_source.PlayOneShot(slash,1.9f);
 	}
 
 	public void KwiatekCaptured (){
@@ -24,13 +25,38 @@ public class AudioController : MonoBehaviour {
 		au_source.PlayOneShot(kompromitacja);
 	}
 
-	public void ComboDone1 () {
-		au_source.PlayOneShot(kombo);
+	public void RandomComboSound () {
+		int r = Random.Range(0,4);
+		if ( r == 0) au_source.PlayOneShot(kombo);
+		if ( r == 1)  au_source.PlayOneShot(wspaniale);
+		if ( r == 2) au_source.PlayOneShot(mistrz);
+		if ( r == 3) au_source.PlayOneShot(nieslychanie);
 		
 	}
 
-	public void ComboDone2 () {
-		au_source.PlayOneShot(wspaniale);
+	public void Win () {
+		
+		StartCoroutine(Win2() );
+	}
+
+	IEnumerator Win2 () {
+		au_source.PlayOneShot(znakomicie);
+		yield return new WaitForSeconds(1f);
+		au_source.PlayOneShot(znakomicie);
+	}
+	public void MegaWin () {
+		StartCoroutine(MegaWin2() );
+	}
+
+	IEnumerator MegaWin2 () {
+		au_source.PlayOneShot(znakomicie);
+		yield return new WaitForSeconds(0.5f);
+		au_source.PlayOneShot(znakomicie);
+		yield return new WaitForSeconds(0.5f);
+		au_source.PlayOneShot(znakomicie);
+		yield return new WaitForSeconds(0.5f);
+		au_source.PlayOneShot(znakomicie);
+
 	}
 
 	#region hide

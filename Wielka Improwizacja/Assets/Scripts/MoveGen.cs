@@ -40,9 +40,14 @@ public class MoveGen : MonoBehaviour
     }
 
 
+
     [Serializable]
     public class Move
     {
+		public delegate void failCallBack ();
+
+		public failCallBack onFailCallBack;
+
         [SerializeField]
         private MOVE _direction;
 
@@ -88,7 +93,8 @@ public class MoveGen : MonoBehaviour
             return false;
         }
 
-        public bool Check(MOVE direction)
+
+		public bool Check(MOVE direction)
         {
             if (_used)
             {
@@ -99,6 +105,7 @@ public class MoveGen : MonoBehaviour
                 _used = true;
 				
 				Spawner.Instance.ThrowKwiatekAround(_player.position,3);
+
                 if (Used != null) Used(true);
             AudienceSatisfaction.Instance.Good();
             }
@@ -110,6 +117,7 @@ public class MoveGen : MonoBehaviour
             _skipped = true;
             if (Used != null) Used(false);
             if (_player==null) return;
+			if ( onFailCallBack != null ) onFailCallBack();
             Spawner.Instance.ThrowPomidorAt(_player.position,2);
             AudienceSatisfaction.Instance.Bad();
         }

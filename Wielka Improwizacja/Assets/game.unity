@@ -507,6 +507,7 @@ MonoBehaviour:
   mistrz: {fileID: 8300000, guid: ff7d29bdcf3551048bc881ce34fff97a, type: 3}
   kombo: {fileID: 8300000, guid: 309a4e4ca7901984fb6aedeca668ee5e, type: 3}
   znakomicie: {fileID: 8300000, guid: c1007eaeb4791ec4f9bbe2b1d3e19cb6, type: 3}
+  nieslychanie: {fileID: 0}
 --- !u!82 &559653831
 AudioSource:
   m_ObjectHideFlags: 0
@@ -858,6 +859,14 @@ Prefab:
     - target: {fileID: 8282692, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: Priority
       value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 8282692, guid: a3018793458343148ac4788036ac6cab, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ea2226daec873843b66107aa1eca30e, type: 3}
+    - target: {fileID: 8282692, guid: a3018793458343148ac4788036ac6cab, type: 2}
+      propertyPath: m_Volume
+      value: .800000012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3018793458343148ac4788036ac6cab, type: 2}

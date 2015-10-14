@@ -1,21 +1,21 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class Pool : MonoBehaviour {
-	[SerializeField] PoolableObject prefab;
+	[SerializeField] IPoolableObject prefab;
 	public int initCap;
 	public string name;
 
-	List<PoolableObject> list;
+	List<IPoolableObject> list;
 
 	void Awake () {
 		if ( initCap < 0 ) throw new UnityException("initCap < 0 ");
-		list = new List<PoolableObject>(initCap);
+		list = new List<IPoolableObject>(initCap);
 		for ( int i =0; i < initCap; i ++ ) {
 			GameObject g = Instantiate(prefab.gameObject);
 			g.transform.SetParent(transform);
-			var _p = g.GetComponent<PoolableObject>();
+			var _p = g.GetComponent<IPoolableObject>();
 			_p.Deactivate();
 			list.Add(_p);
 		}
@@ -31,7 +31,7 @@ public class Pool : MonoBehaviour {
 
 		GameObject g = Instantiate(prefab.gameObject);
 		g.transform.SetParent(transform);
-		var _p = g.GetComponent<PoolableObject>();
+		var _p = g.GetComponent<IPoolableObject>();
 		_p.Activate();
 		list.Add(_p);
 

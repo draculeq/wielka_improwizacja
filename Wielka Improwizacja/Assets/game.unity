@@ -943,6 +943,7 @@ MonoBehaviour:
   Speed: 2
   punishment: 3
   reward: 3
+  winTimer: 0
 --- !u!1001 &874497612
 Prefab:
   m_ObjectHideFlags: 0

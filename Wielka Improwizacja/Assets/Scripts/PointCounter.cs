@@ -4,7 +4,6 @@ using UnityEngine;
 public class PointCounter : MonoBehaviour
 {
 	public bool usingLeftPanel;
-	[SerializeField] UIScore ui_score;
 	int totalPoints;
 	PlayerController contro;
 

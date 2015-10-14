@@ -9,7 +9,6 @@ public class MoveGen : MonoBehaviour
 {
     public event Action<Move> NewMoveGenerated;
     public float lifeTime;
-    public float timetolerance = 0.3f;
 
     static MOVE[] tableMut = { MOVE.UP, MOVE.DOWN, MOVE.LEFT, MOVE.RIGHT };
 
@@ -35,7 +34,7 @@ public class MoveGen : MonoBehaviour
     private void OnMoveBeingGenerated(MOVE m)
     {
         currentIndex = (currentIndex + 1)%moves.Length;
-        moves[currentIndex] = new Move(tableMut[Random.Range(0, tableMut.Length)], lifeTime, timetolerance,transform);
+        moves[currentIndex] = new Move(tableMut[Random.Range(0, tableMut.Length)], lifeTime, 0.3f,transform);
         if (NewMoveGenerated != null) NewMoveGenerated(moves[currentIndex]);
     }
 
@@ -106,7 +105,9 @@ public class MoveGen : MonoBehaviour
         {
             _skipped = true;
             if (Used != null) Used(false);
-            if (Spawner.Instance != null) if (_player != null) Spawner.Instance.ThrowPomidorAt(_player.position);
+			Debug.Log("Spawner.Instance == null ? " + (Spawner.Instance == null));
+			Debug.Log("_player == null ? " + (_player == null));
+            Spawner.Instance.ThrowPomidorAt(_player.position,2);
         }
     }
 }

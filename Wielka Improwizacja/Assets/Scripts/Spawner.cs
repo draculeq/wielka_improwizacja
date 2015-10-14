@@ -27,32 +27,32 @@ public class Spawner : MonoBehaviour
 
 	//for test purpose
 	public Transform player1;
-
-	void OnGUI () {
-		if ( GUILayout.Button("Throw pomidor at player1") ) {
-			ThrowPomidorAt(player1.position);
+	
+	public void ThrowPomidorAt ( Vector3 player_pos, int nb ) {
+		while ( nb > 0 ) {
+			var k = pomidorPool.Get();
+			_tmp.Set (player_pos.x, _tmp.y, _tmp.z);
+			k.transform.position = _tmp;
+			_tmp2.Set ( force.x+ Random.value* throwPomidorRandomRangeOffset - throwPomidorRandomRangeOffset/2 , force.y + Random.value* throwPomidorRandomRangeOffset - throwPomidorRandomRangeOffset/2, force.z);
+			k.GetComponent<Rigidbody>().AddForce(_tmp2* (strength + Random.value  * deltaStrength)*1.1f ,mode);
+			nb --;
 		}
-		if ( GUILayout.Button("Throw kwiatek at player1") ) {
-			ThrowKwiatekAround(player1.position);
-		}
-	}
-
-	public void ThrowPomidorAt ( Vector3 player_pos ) {
-		var k = pomidorPool.Get();
-		_tmp.Set (player_pos.x, _tmp.y, _tmp.z);
-		k.transform.position = _tmp;
-		k.GetComponent<Rigidbody>().AddForce(force* (strength + Random.value  * deltaStrength)*1.1f ,mode);
 	}
 
 	[Range(0,1f)]
 	public float throwFlowerRandomRangeOffset;
+	[Range(0,4f)]
+	public float throwPomidorRandomRangeOffset;
 
-	public void ThrowKwiatekAround (Vector3 player_pos ) {
-		var k = kwiatekPool.Get();
-		_tmp.Set (player_pos.x, _tmp.y, _tmp.z);
-		k.transform.position = _tmp;
-		_tmp2.Set ( force.x + Random.Range(0,throwFlowerRandomRangeOffset)-throwFlowerRandomRangeOffset/2, force.y, force.z);
-		k.GetComponent<Rigidbody>().AddForce(_tmp2* (strength + ((Random.value - 0.5f) * deltaStrength*2 )) ,mode);
+	public void ThrowKwiatekAround (Vector3 player_pos, int nb ) {
+		while ( nb > 0 ) {
+			var k = kwiatekPool.Get();
+			_tmp.Set (player_pos.x, _tmp.y, _tmp.z);
+			k.transform.position = _tmp;
+			_tmp2.Set ( force.x + Random.Range(0,throwFlowerRandomRangeOffset)-throwFlowerRandomRangeOffset/2, force.y, force.z);
+			k.GetComponent<Rigidbody>().AddForce(_tmp2* (strength + ((Random.value - 0.5f) * deltaStrength*2 )) ,mode);
+			nb --;
+		}
 	}
 
 	#region hide

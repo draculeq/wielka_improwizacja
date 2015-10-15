@@ -6,6 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/jamWTeatrze.unity
+  - enabled: 1
+    path: Assets/Scenes/artcore.unity
+  - enabled: 1
     path: Assets/Scenes/Deadbit.unity
+  - enabled: 1
+    path: Assets/Scenes/pga.unity
+  - enabled: 1
+    path: Assets/Scenes/polygon.unity
+  - enabled: 1
+    path: Assets/Scenes/gic.unity
   - enabled: 1
     path: Assets/game.unity

@@ -69,11 +69,10 @@ public class PlayerController : MonoBehaviour
     void ComboCount()
     {
         success_combo_count++;
-        Debug.Log("success_combo_count = " + success_combo_count + " next_combo=" + next_combo);
         if (success_combo_count > next_combo)
         {
             AudioController.Instance.RandomComboSound();
-            next_combo += 3;
+            next_combo += 4;
         }
     }
 

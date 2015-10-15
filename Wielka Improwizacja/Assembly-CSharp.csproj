@@ -45,7 +45,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AudioController.cs" />
      <Compile Include="Assets\LoadNextScene.cs" />
      <Compile Include="Assets\Rewired\Examples\ControlRemapping1\Scripts\ControlRemappingDemo1.cs" />
      <Compile Include="Assets\Rewired\Examples\CustomControllersTilt\Scripts\CustomControllersTiltDemo.cs" />
@@ -96,6 +95,7 @@
      <Compile Include="Assets\Rewired\Internal\Scripts\Platforms\Ouya\OuyaInputSource.cs" />
      <Compile Include="Assets\Scripts\ArrowsPanel.cs" />
      <Compile Include="Assets\Scripts\AudienceSatisfaction.cs" />
+     <Compile Include="Assets\Scripts\AudioController.cs" />
      <Compile Include="Assets\Scripts\AudioSpecTest.cs" />
      <Compile Include="Assets\Scripts\Crowd.cs" />
      <Compile Include="Assets\Scripts\CrowdRow.cs" />
@@ -124,17 +124,11 @@
      <None Include="Assets\DOTween\readme.txt" />
      <None Include="Assets\DOTween\DOTween43.xml" />
      <None Include="Assets\Rewired\Documentation\ReleaseNotes.txt" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
  <HintPath>D:/Projects/Git-Repo/wielka_improwizacja2/Wielka Improwizacja/Assets/DOTween/DOTween.dll</HintPath>

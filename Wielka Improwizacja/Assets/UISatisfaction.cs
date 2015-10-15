@@ -19,12 +19,10 @@ public class UISatisfaction : MonoBehaviour
     {
         if (AudienceSatisfaction.Instance.Satisfaction >= 100 && (particle.isStopped || particle.isPaused))
         {
-            Debug.Log("play");
             particle.Play();
         }
         else if (particle.isPlaying && AudienceSatisfaction.Instance.Satisfaction < 100)
         {
-            Debug.Log("stop");
             particle.Stop();
         }
 

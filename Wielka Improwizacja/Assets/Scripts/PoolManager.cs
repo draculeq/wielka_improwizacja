@@ -3,8 +3,6 @@ using System.Collections.Generic;
 
 public class PoolManager : MonoBehaviour
 {
-	[SerializeField] Pool[] pools;	
-
 	Dictionary<string, Pool> dict; 
 	static bool awaked;
 
@@ -16,6 +14,7 @@ public class PoolManager : MonoBehaviour
 	}
 
 	void Awake () {
+		var pools = GetComponentsInChildren<Pool>();
 		dict = new Dictionary<string, Pool>(pools.Length);
 		foreach ( var p in pools ) {
 			dict.Add(p.name, p);

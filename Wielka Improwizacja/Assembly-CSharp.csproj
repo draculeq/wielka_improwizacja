@@ -45,6 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BackgroundMusicController.cs" />
      <Compile Include="Assets\LoadNextScene.cs" />
      <Compile Include="Assets\Rewired\Examples\ControlRemapping1\Scripts\ControlRemappingDemo1.cs" />
      <Compile Include="Assets\Rewired\Examples\CustomControllersTilt\Scripts\CustomControllersTiltDemo.cs" />
@@ -101,6 +102,7 @@
      <Compile Include="Assets\Scripts\CrowdRow.cs" />
      <Compile Include="Assets\Scripts\EndGameController.cs" />
      <Compile Include="Assets\Scripts\IPoolableObject.cs" />
+     <Compile Include="Assets\Scripts\IThrowableObject.cs" />
      <Compile Include="Assets\Scripts\Kwiatek.cs" />
      <Compile Include="Assets\Scripts\MoveGen.cs" />
      <Compile Include="Assets\Scripts\OnCollisionCallBack.cs" />
@@ -112,7 +114,14 @@
      <Compile Include="Assets\Scripts\PoolManager.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\UIArrow.cs" />
+     <Compile Include="Assets\Scripts\UICreditsInput.cs" />
+     <Compile Include="Assets\Scripts\UIGameOverInput.cs" />
+     <Compile Include="Assets\Scripts\UIMenuInput.cs" />
+     <Compile Include="Assets\Scripts\UIPressStart.cs" />
      <Compile Include="Assets\Scripts\UIScore.cs" />
+     <Compile Include="Assets\Scripts\UISkip.cs" />
+     <Compile Include="Assets\Scripts\VisualText.cs" />
+     <Compile Include="Assets\Scripts\VisualTextControl.cs" />
      <Compile Include="Assets\UIController.cs" />
      <Compile Include="Assets\UISatisfaction.cs" />
      <None Include="Assets\DOTween\DOTween50.xml" />

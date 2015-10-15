@@ -29,7 +29,6 @@ public class MoveGen : MonoBehaviour
     {
         var s = GetComponent<AudioSpecTest>();
         s.onMoveBeingGenerated = OnMoveBeingGenerated;
-        s.StartGen();
     }
 
     private void OnMoveBeingGenerated(MOVE m)

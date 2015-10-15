@@ -6,7 +6,7 @@ public class AudioController : MonoBehaviour
 {
     AudioSource au_source;
     [SerializeField]
-    AudioClip gwizd, slash, kompromitacja, wspaniale, mistrz, kombo, znakomicie, nieslychanie;
+    AudioClip gwizd, slash, kompromitacja, mistrz, kombo, znakomicie, nieslychanie, intro;
 
     void Awake()
     {
@@ -17,6 +17,10 @@ public class AudioController : MonoBehaviour
         }
         else DestroyObject(gameObject);
     }
+
+	public void IntroSound () {
+		au_source.PlayOneShot(intro);
+	}
 
     public void PomidorCrashed()
     {
@@ -33,13 +37,11 @@ public class AudioController : MonoBehaviour
         au_source.PlayOneShot(kompromitacja);
     }
 
-    public void RandomComboSound()
+    public void RandomComboSound(int r)
     {
-        int r = Random.Range(0, 4);
         if (r == 0) au_source.PlayOneShot(kombo);
-        if (r == 1) au_source.PlayOneShot(wspaniale);
+		if (r == 1) au_source.PlayOneShot(nieslychanie);
         if (r == 2) au_source.PlayOneShot(mistrz);
-        if (r == 3) au_source.PlayOneShot(nieslychanie);
 
     }
 

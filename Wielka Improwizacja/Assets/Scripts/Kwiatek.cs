@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Kwiatek : IPoolableObject
+public class Kwiatek : IThrowableObject
 {
 	public override void PlayOnTriggerSound ()
 	{

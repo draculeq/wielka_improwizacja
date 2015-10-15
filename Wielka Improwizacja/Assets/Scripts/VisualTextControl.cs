@@ -15,7 +15,18 @@ public class VisualTextControl : MonoBehaviour
 			return _pool;
 		}
 		set {
-			_pool = pool;
+			_pool = value;
+		}
+	}
+	Crowd _crowd;
+	Crowd crowd { 
+		get {
+			if ( _crowd == null ) 
+				_crowd = GameObject.FindObjectOfType<Crowd>();
+			return _crowd;
+		}
+		set {
+			_crowd = value;
 		}
 	}
 
@@ -56,7 +67,6 @@ public class VisualTextControl : MonoBehaviour
 	}
 
 	public void RandomBoo ( int nb ) {
-		var crowd = FindObjectOfType<Crowd>();
 		int sum = 0;
 		foreach (var r in crowd.rows ){
 			sum += r.heads.Length;
@@ -66,14 +76,14 @@ public class VisualTextControl : MonoBehaviour
 			int index = Random.Range(0, sum);
 
 			if ( index < crowd.rows[0].heads.Length ) {
-				Boo(crowd.rows[0].heads[index].position,"boo");
+				Boo(crowd.rows[0].heads[Mathf.Clamp(index,2,crowd.rows[0].heads.Length-3)].position,"boo");
 				nb --;
 				continue;
 			} 
 			index -= crowd.rows[0].heads.Length;
 
 			if ( index < crowd.rows[1].heads.Length ) {
-				Boo(crowd.rows[1].heads[index].position,"boo");
+				Boo(crowd.rows[1].heads[Mathf.Clamp(index,2,crowd.rows[1].heads.Length-3)].position,"boo");
 				nb --;
 				continue;
 			} 
@@ -81,7 +91,7 @@ public class VisualTextControl : MonoBehaviour
 			index -= crowd.rows[1].heads.Length;
 
 			if ( index < crowd.rows[2].heads.Length ) {
-				Boo(crowd.rows[2].heads[index].position,"boo");
+				Boo(crowd.rows[2].heads[Mathf.Clamp(index,2,crowd.rows[2].heads.Length-3)].position,"boo");
 				nb --;
 				continue;
 			} 

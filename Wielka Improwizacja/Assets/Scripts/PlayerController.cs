@@ -67,13 +67,13 @@ public class PlayerController : MonoBehaviour
     int next_combo = 4;
 
 	int fail_combo_count = 0;
-	int fail_next_combo = 5;
+	int fail_next_combo = 3;
 	
 	public Vector3 text_offset = new Vector3(0,2,0);
     void ComboCount()
     {
 		fail_combo_count = 0;
-		fail_next_combo = 4;
+		fail_next_combo = 3;
         
 		success_combo_count++;
         if (success_combo_count > next_combo)
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
 			AudioController.Instance.RandomBoo();
 			VisualTextControl.Instance.RandomBoo(1);
 			
-			fail_next_combo += 5;
+			fail_next_combo += 2;
 		}
     }
 

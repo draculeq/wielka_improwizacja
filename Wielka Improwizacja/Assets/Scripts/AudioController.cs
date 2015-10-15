@@ -8,6 +8,18 @@ public class AudioController : MonoBehaviour
     [SerializeField]
     AudioClip gwizd, slash, kompromitacja, mistrz, kombo, znakomicie, nieslychanie, intro;
 
+	Crowd _crowd;
+	Crowd crowd { 
+		get {
+			if ( _crowd == null ) 
+				_crowd = GameObject.FindObjectOfType<Crowd>();
+			return _crowd;
+		}
+		set {
+			_crowd = value;
+		}
+	}
+
     void Awake()
     {
         if (GameObject.FindObjectsOfType(typeof(AudioController)).Length <= 1)
@@ -34,7 +46,7 @@ public class AudioController : MonoBehaviour
 
     public void BothFailed()
     {
-        au_source.PlayOneShot(kompromitacja);
+        au_source.PlayOneShot(kompromitacja,1f);
     }
 
     public void RandomComboSound(int r)
@@ -46,6 +58,7 @@ public class AudioController : MonoBehaviour
     }
 
 	public void RandomBoo () {
+		crowd.RandomBooSound();
 	}
 
     public void Win()
@@ -56,26 +69,26 @@ public class AudioController : MonoBehaviour
 
     IEnumerator Win2()
     {
-        au_source.PlayOneShot(znakomicie);
+        au_source.PlayOneShot(znakomicie,1f);
         yield return new WaitForSeconds(1f);
-        au_source.PlayOneShot(znakomicie);
-    }
-    public void MegaWin()
+		au_source.PlayOneShot(znakomicie,1f);
+	}
+	public void MegaWin()
     {
         StartCoroutine(MegaWin2());
     }
 
     IEnumerator MegaWin2()
     {
-        au_source.PlayOneShot(znakomicie);
-        yield return new WaitForSeconds(0.5f);
-        au_source.PlayOneShot(znakomicie);
-        yield return new WaitForSeconds(0.5f);
-        au_source.PlayOneShot(znakomicie);
-        yield return new WaitForSeconds(0.5f);
-        au_source.PlayOneShot(znakomicie);
-
-    }
+		au_source.PlayOneShot(znakomicie,1f);
+		yield return new WaitForSeconds(0.5f);
+		au_source.PlayOneShot(znakomicie,1f);
+		yield return new WaitForSeconds(0.5f);
+		au_source.PlayOneShot(znakomicie,1f);
+		yield return new WaitForSeconds(0.5f);
+		au_source.PlayOneShot(znakomicie,1f);
+		
+	}
 
     #region hide
     private static AudioController _instance;

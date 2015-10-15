@@ -19,14 +19,14 @@ public class EndGameController : MonoBehaviour {
 		else if ( winner == 1 ) {
 			p1.Play("win");
 			p2.Play("lose");
-			AudioController.Instance.Win();
+			AudioController.Instance.MegaWin();
 			StartCoroutine(Win1());
         }
         else
         {
             p1.Play("lose");
             p2.Play("win");
-            AudioController.Instance.Win();
+			AudioController.Instance.MegaWin();
             StartCoroutine(Win2());
         }
 	    //}else if ( winner == 3 ) {
@@ -44,28 +44,29 @@ public class EndGameController : MonoBehaviour {
 	bool crowdBoo;
     IEnumerator CrowdBoo () {
 		while (crowdBoo ) {
-			VisualTextControl.Instance.RandomBoo(6);
-			yield return new WaitForSeconds(1);
 			Spawner.Instance.ThrowPomidorAt(p1.transform.position,4);
 			Spawner.Instance.ThrowPomidorAt(p2.transform.position,4);
+			AudioController.Instance.RandomBoo();
+			VisualTextControl.Instance.RandomBoo(6);
+			yield return new WaitForSeconds(1.5f);
 		}
 	}
     IEnumerator Lose()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5.5f);
         LoseSprite.SetActive(true);
 		crowdBoo = false;
 
     }
     IEnumerator Win1()
     {
-        yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(5.5f);
 		Win1Sprite.SetActive(true);
 		crowdBoo = false;
     }
     IEnumerator Win2()
     {
-        yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(5.5f);
 		Win2Sprite.SetActive(true);
 		crowdBoo = false;
     }

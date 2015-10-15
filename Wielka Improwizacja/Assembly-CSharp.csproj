@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AudioController.cs" />
+     <Compile Include="Assets\LoadNextScene.cs" />
      <Compile Include="Assets\Rewired\Examples\ControlRemapping1\Scripts\ControlRemappingDemo1.cs" />
      <Compile Include="Assets\Rewired\Examples\CustomControllersTilt\Scripts\CustomControllersTiltDemo.cs" />
      <Compile Include="Assets\Rewired\Examples\CustomControllersTouch\Scripts\CustomControllerDemo.cs" />
@@ -114,21 +115,32 @@
      <Compile Include="Assets\Scripts\UIScore.cs" />
      <Compile Include="Assets\UIController.cs" />
      <Compile Include="Assets\UISatisfaction.cs" />
+     <None Include="Assets\DOTween\DOTween50.xml" />
+     <None Include="Assets\aaa.txt" />
      <None Include="Assets\Rewired\Documentation\licences.txt" />
      <None Include="Assets\Rewired\Documentation\ReadMe.txt" />
      <None Include="Assets\Textures\GUI\font\SIL Open Font License.txt" />
+     <None Include="Assets\DOTween\DOTween46.xml" />
+     <None Include="Assets\DOTween\readme.txt" />
+     <None Include="Assets\DOTween\DOTween43.xml" />
      <None Include="Assets\Rewired\Documentation\ReleaseNotes.txt" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ <Reference Include="DOTween">
+ <HintPath>D:/Projects/Git-Repo/wielka_improwizacja2/Wielka Improwizacja/Assets/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>D:/Projects/Git-Repo/wielka_improwizacja2/Wielka Improwizacja/Assets/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>D:/Projects/Git-Repo/wielka_improwizacja2/Wielka Improwizacja/Assets/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>D:/Projects/Git-Repo/wielka_improwizacja2/Wielka Improwizacja/Assets/DOTween/DOTween50.dll</HintPath>
  </Reference>
  <Reference Include="Rewired_Core">
  <HintPath>D:/Projects/Git-Repo/wielka_improwizacja2/Wielka Improwizacja/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Core.dll</HintPath>

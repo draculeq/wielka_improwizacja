@@ -165,8 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1: {fileID: 1213666038}
   p2: {fileID: 868733470}
-  kra_lose: {fileID: 21300000, guid: 3e5e9819fd2749046be44fd3d2e375d1, type: 3}
-  gor_lose: {fileID: 21300000, guid: 7f54f08ddcc88c34082280aca9204181, type: 3}
   LoseSprite: {fileID: 1286994541}
   Win1Sprite: {fileID: 1848520707}
   Win2Sprite: {fileID: 1017486083}
@@ -600,10 +598,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f8532c252db4ea48879554fdfd2fbc7, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1462955499 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 490672, guid: 4f8532c252db4ea48879554fdfd2fbc7, type: 2}
-  m_PrefabInternal: {fileID: 1462955498}
 --- !u!1001 &1709614567
 Prefab:
   m_ObjectHideFlags: 0
@@ -800,48 +794,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1848520707}
---- !u!1 &1863255410
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1863255411}
-  - 114: {fileID: 1863255412}
-  m_Layer: 0
-  m_Name: texts
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1863255411
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1863255410}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.66410351, y: -1.23812222, z: 6.90999985}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1462955499}
-  m_RootOrder: 2
---- !u!114 &1863255412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1863255410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad364eecebed8f4da580e51dd3bf08c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 11431792, guid: c932b94be69cc9340bd624b24e5d3b21, type: 2}
-  initCap: 5
-  name: visual_text
 --- !u!1001 &2102513681
 Prefab:
   m_ObjectHideFlags: 0

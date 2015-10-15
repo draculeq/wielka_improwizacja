@@ -1,15 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\VisualTextControl.cs">
     <Files>
-      <File FileName="Assets\Scripts\VisualTextControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\VisualText.cs" Line="60" Column="2" />
-      <File FileName="Assets\Scripts\Spawner.cs" Line="28" Column="28" />
-      <File FileName="Assets\Scripts\AudioController.cs" Line="9" Column="42" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="76" Column="53" />
-      <File FileName="Assets\Scripts\Crowd.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CrowdRow.cs" Line="12" Column="22" />
-      <File FileName="Assets\Scripts\EndGameController.cs" Line="43" Column="42" />
+      <File FileName="Assets\Scripts\AudioController.cs" Line="45" Column="3" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="98" Column="40" />
+      <File FileName="Assets\Scripts\VisualTextControl.cs" Line="94" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

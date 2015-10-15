@@ -65,16 +65,22 @@ public class PlayerController : MonoBehaviour
 
     int success_combo_count = 0;
     int next_combo = 4;
+
+	int fail_combo_count = 0;
+	int fail_next_combo = 3;
 	
 	public Vector3 text_offset = new Vector3(0,2,0);
     void ComboCount()
     {
-        success_combo_count++;
+		fail_combo_count = 0;
+		fail_next_combo = 3;
+        
+		success_combo_count++;
         if (success_combo_count > next_combo)
         {
-			int r = Random.Range(0, 4);
-            AudioController.Instance.RandomComboSound(r);
-			VisualTextControl.Instance.RandomCombo(r,transform.position+ text_offset);
+			int combo_type = Random.Range(0, 4);
+            AudioController.Instance.RandomComboSound(combo_type);
+			VisualTextControl.Instance.RandomCombo(combo_type,transform.position + text_offset);
 		
             next_combo += 4;
         }
@@ -84,6 +90,15 @@ public class PlayerController : MonoBehaviour
     {
         success_combo_count = 0;
         next_combo = 4;
+
+		fail_combo_count++;
+		if (fail_combo_count > fail_next_combo)
+		{
+			AudioController.Instance.RandomBoo();
+			VisualTextControl.Instance.RandomBoo(1);
+			
+			fail_next_combo += 2;
+		}
     }
 
     private void Skills()

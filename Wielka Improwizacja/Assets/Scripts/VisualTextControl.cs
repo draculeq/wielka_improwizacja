@@ -23,7 +23,8 @@ public class VisualTextControl : MonoBehaviour
 		animations = new int[] { 
 			Animator.StringToHash("vi_text_lightcurve"),
 			Animator.StringToHash("vi_text_leftcurve"),
-			Animator.StringToHash("vi_text_zikzag")
+			Animator.StringToHash("vi_text_zikzag"),
+			Animator.StringToHash("vi_text_grow")
 		};
 	}
 

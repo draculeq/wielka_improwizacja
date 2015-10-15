@@ -675,7 +675,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 461898, guid: 530d50aa26d76ad4ca4f2cca1d73d11d, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11462290, guid: 530d50aa26d76ad4ca4f2cca1d73d11d, type: 2}
       propertyPath: _userData.players.Array.data[1]._defaultKeyboardMaps.Array.data[0]._enabled

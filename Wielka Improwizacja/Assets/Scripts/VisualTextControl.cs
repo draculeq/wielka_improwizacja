@@ -30,10 +30,10 @@ public class VisualTextControl : MonoBehaviour
 
 	int[] animations; 
 
-	public void RandomCombo (int r, Vector3 pos ) {
-		if (r == 0) Combo(pos,"combo");
-		if (r == 1) Combo(pos,"nieslyn");
-		if (r == 2) Combo(pos,"mistrz");
+	public void RandomCombo (int combo_index, Vector3 pos ) {
+		if (combo_index == 0) Combo(pos,"combo");
+		if (combo_index == 1) Combo(pos,"nieslyn");
+		if (combo_index == 2) Combo(pos,"mistrz");
 	}
 	
 	public void Combo (Vector3 pos , string text ) {
@@ -45,23 +45,47 @@ public class VisualTextControl : MonoBehaviour
 		vt.Run();
 	}
 
-	public void Boo( Vector3 pos ) {
+	public void Boo( Vector3 pos,string text ) {
 		pos.y += 1;
 		var t = pool.Get();
 		t.transform.position = pos;
 		var vt = t.GetComponent<VisualText>();
-		vt.spriteRenderer.sprite = ApplySprite("boo");
+		vt.spriteRenderer.sprite = ApplySprite(text);
 		vt.animator.Play(animations[Random.Range(0,animations.Length)]);
 		vt.Run();
 	}
 
 	public void RandomBoo ( int nb ) {
 		var crowd = FindObjectOfType<Crowd>();
+		int sum = 0;
+		foreach (var r in crowd.rows ){
+			sum += r.heads.Length;
+		}
 
 		while ( nb > 0 ) {
-			foreach ( var r in crowd.rows ) {
-				Boo(r.heads[Random.Range(0,r.heads.Length)].position);
-			}
+			int index = Random.Range(0, sum);
+
+			if ( index < crowd.rows[0].heads.Length ) {
+				Boo(crowd.rows[0].heads[index].position,"boo");
+				nb --;
+				continue;
+			} 
+			index -= crowd.rows[0].heads.Length;
+
+			if ( index < crowd.rows[1].heads.Length ) {
+				Boo(crowd.rows[1].heads[index].position,"boo");
+				nb --;
+				continue;
+			} 
+			
+			index -= crowd.rows[1].heads.Length;
+
+			if ( index < crowd.rows[2].heads.Length ) {
+				Boo(crowd.rows[2].heads[index].position,"boo");
+				nb --;
+				continue;
+			} 
+
 			nb --;
 		}
 	}

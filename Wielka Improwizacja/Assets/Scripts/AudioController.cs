@@ -45,6 +45,9 @@ public class AudioController : MonoBehaviour
 
     }
 
+	public void RandomBoo () {
+	}
+
     public void Win()
     {
 

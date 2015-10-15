@@ -81,11 +81,11 @@ public class AudioController : MonoBehaviour
     IEnumerator MegaWin2()
     {
 		au_source.PlayOneShot(znakomicie,1f);
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(1f);
 		au_source.PlayOneShot(znakomicie,1f);
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(1f);
 		au_source.PlayOneShot(znakomicie,1f);
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(1f);
 		au_source.PlayOneShot(znakomicie,1f);
 		
 	}

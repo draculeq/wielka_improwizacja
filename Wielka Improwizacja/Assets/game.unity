@@ -588,7 +588,7 @@ Prefab:
     - target: {fileID: 8282692, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 9c412bc6c18f8384bae2b35e7312506f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8282692, guid: a3018793458343148ac4788036ac6cab, type: 2}
       propertyPath: m_Volume
       value: .600000024

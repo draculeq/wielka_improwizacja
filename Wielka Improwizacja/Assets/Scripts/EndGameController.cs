@@ -22,23 +22,26 @@ public class EndGameController : MonoBehaviour {
 			p2.Play("lose");
 		    StartCoroutine(Win1());
         }
-        else if ( winner == 2 ) {
-			p1.Play("lose");
-			p2.Play("win");
-			AudioController.Instance.Win();
-		}else if ( winner == 3 ) {
-			p1.Play("win");
-			p2.Play("win");
-			AudioController.Instance.Win();
-		    StartCoroutine(Win2());
-		} else
+        else
         {
-            throw new UnityException("wuut? available : 0 / 1 / 2 / 3");
-		}
-		//
-	}
+            p1.Play("lose");
+            p2.Play("win");
+            AudioController.Instance.Win();
+            StartCoroutine(Win2());
+        }
+	    //}else if ( winner == 3 ) {
+            //	p1.Play("win");
+            //	p2.Play("win");
+            //	AudioController.Instance.Win();
+            //    StartCoroutine(Win2());
+            //} else
+            //      {
+            //          throw new UnityException("wuut? available : 0 / 1 / 2 / 3");
+            //}
+            //
+        }
 
-	IEnumerator CrowdBoo () {
+        IEnumerator CrowdBoo () {
 		while (true ) {
 			VisualTextControl.Instance.RandomBoo(2);
 			yield return new WaitForSeconds(1);

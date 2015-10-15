@@ -18,6 +18,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/gic.unity
   - enabled: 1
+    path: Assets/Scenes/pegi.unity
+  - enabled: 1
     path: Assets/Scenes/beferoMenu.unity
   - enabled: 1
     path: Assets/Menu.unity
